@@ -2,6 +2,12 @@
 //!
 //! This crate intentionally excludes git/package IO. Behavior is locked by the
 //! maw-js portable fixture file `test/spec/calver.fixtures.json`.
+
+/// Portable maw-js parity fixtures (`calver.fixtures.json`), exported so
+/// consumers can lock their own CLI/behavior against the same spec without
+/// duplicating the fixture file.
+pub const PORTABLE_FIXTURES_JSON: &str = include_str!("../tests/fixtures/calver.fixtures.json");
+
 /// Pre-release channel used by alpha/beta cuts.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum Channel {
