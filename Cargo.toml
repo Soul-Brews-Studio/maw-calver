@@ -1,0 +1,20 @@
+[package]
+name = "maw-calver"
+version = "0.1.0-alpha.1"
+edition = "2021"
+license = "BUSL-1.1"
+repository = "https://github.com/Soul-Brews-Studio/maw-calver"
+description = "CalVer version scheme for the maw fleet (extracted from maw-rs)"
+publish = false
+
+[dependencies]
+
+[dev-dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+pedantic = { level = "warn", priority = -1 }
