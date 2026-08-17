@@ -37,11 +37,14 @@ Entry point: `compute_version(args, tags, package_version)` — see `src/lib.rs`
 ## Development
 
 ```bash
-cargo test
-cargo clippy --all-targets -- -D warnings
+cargo fmt --all -- --check
+cargo test --workspace --locked --no-fail-fast
+cargo clippy --workspace --all-targets --locked -- -D warnings
 ```
 
-`forbid(unsafe_code)`, clippy pedantic clean, Rust edition 2021.
+CI runs these commands with the pinned Rust toolchain from
+`rust-toolchain.toml`. `forbid(unsafe_code)`, clippy pedantic clean, Rust edition
+2021.
 
 ## License
 
