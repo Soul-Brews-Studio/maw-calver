@@ -34,6 +34,20 @@ maw-calver = { git = "https://github.com/Soul-Brews-Studio/maw-calver", rev = "<
 
 Entry point: `compute_version(args, tags, package_version)` — see `src/lib.rs`.
 
+## Release model
+
+This repo publishes GitHub releases by annotated tag, **not** crates.io.
+
+- Tag format: `v<YY>.<M>.<D>-alpha.<HMM>` (or `beta` channel).
+- Consumers must pin by full commit SHA for immutability; tags are mutable names.
+- Example consumption in downstream `Cargo.toml`:
+
+```toml
+[dependencies]
+maw-calver = { git = "https://github.com/Soul-Brews-Studio/maw-calver", rev = "<40-hex commit SHA>", version = "=26.8.18-alpha.1329" }
+```
+
+
 ## Development
 
 ```bash
